@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n,t as r}from"./index-C9Br5bFu.js";var i={},a={class:`flex items-center justify-center h-screen`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`h1`,{class:`text-3xl font-bold text-red-500`},`Tailwind is working 🚀`,-1)]])}var s=r(i,[[`render`,o]]);export{s as default};
