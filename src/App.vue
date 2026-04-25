@@ -4,7 +4,5 @@ import AppNavbar from '@/components/AppNavbar.vue'
 
 <template>
   <AppNavbar />
-  <main class="container mx-auto p-4">
-    <RouterView />
-  </main>
+  <router-view />
 </template>
