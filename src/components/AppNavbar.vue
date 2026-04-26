@@ -19,6 +19,10 @@ const toggleMenu = () => {
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
+  { label: 'Overview', to: '/about' },
+  { label: 'Skills', to: '/about' },
+  { label: 'Projects', to: '/about' },
+  { label: 'Contact', to: '/about' },
 ]
 
 const socialLinks = [
@@ -41,33 +45,38 @@ const socialLinks = [
 </script>
 
 <template>
-  <nav ref="navRef" class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-4">
+  <nav
+    ref="navRef"
+    class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] md:w-fit px-4"
+  >
     <div
-      class="bg-orange-900/20 backdrop-blur-[3px] border border-white/10 rounded-3xl px-6 h-16 flex items-center justify-between"
+      class="bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-3xl px-6 h-16 flex items-center justify-between shadow-[0_-4px_24px_0_rgba(0,0,0,0.08),0_4px_24px_0_rgba(0,0,0,0.08)] w-full md:w-fit gap-4"
     >
       <!-- Left: Logo -->
       <RouterLink
         to="/"
         active-class=""
         exact-active-class=""
-        class="text-gray-800 dark:text-white text-xl font-medium font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
+        class="text-zinc-900 dark:text-white text-xl font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
       >
-        TALHA<span class="text-red-900 dark:text-gray-100">F</span
+        TALHA<span class="text-red-600 dark:text-red-500">F</span
         ><span class="text-red-500">.</span>
       </RouterLink>
 
       <!-- Center: Nav Links -->
-      <ul class="hidden md:flex items-center gap-1 justify-center flex-1">
+      <ul class="hidden md:flex items-center gap-1 justify-center flex-1 px-4">
         <li v-for="link in navLinks" :key="link.label">
           <RouterLink
             :to="link.to"
-            class="relative text-base px-4 py-1.5 rounded-full transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            class="group relative text-base px-4 pt-2 pb-2.5 rounded-full transition-all duration-300 whitespace-nowrap"
             :class="
-              link.label === 'Resume'
+              link.label === 'Contact'
                 ? 'text-red-500 hover:text-red-400'
-                : 'text-zinc-400 hover:text-white'
+                : $route.path === link.to
+                  ? 'text-zinc-900 dark:text-white bg-white/60 dark:bg-white/10 shadow-sm ring-1 ring-zinc-200 dark:ring-white/20'
+                  : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5'
             "
-            active-class="!text-white after:!w-full"
+            active-class=""
           >
             {{ link.label }}
           </RouterLink>
@@ -75,7 +84,7 @@ const socialLinks = [
       </ul>
 
       <!-- Right: Social Links + Dark Mode -->
-      <div class="flex items-center gap-3 justify-end w-1/4">
+      <div class="flex items-center gap-3">
         <!-- Social Icons — desktop -->
         <a
           v-for="s in socialLinks"
@@ -84,7 +93,7 @@ const socialLinks = [
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="s.label"
-          class="hidden md:block text-zinc-400 hover:text-white transition-colors p-2.5 rounded-full hover:bg-white/10 cursor-pointer"
+          class="hidden md:block text-zinc-600 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-gray-100 transition-colors p-2.5 rounded-full hover:bg-gray-200/70 dark:hover:bg-gray-900 shadow-inner shadow-neutral-300/50 dark:shadow-emerald-900 cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -97,11 +106,11 @@ const socialLinks = [
         </a>
 
         <!-- Divider — শুধু desktop এ -->
-        <span class="hidden md:block w-px h-4 bg-white/10"></span>
+        <span class="hidden md:block w-px h-4 bg-gray-900/20 dark:bg-white/20"></span>
 
         <!-- Dark Mode Toggle — সব জায়গায় -->
         <button
-          class="cursor-pointer text-zinc-400 hover:text-white transition-colors p-2.5 rounded-full hover:bg-white/10"
+          class="text-zinc-600 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-gray-100 transition-colors p-2.5 rounded-full hover:bg-gray-200/70 dark:hover:bg-gray-900 shadow-inner shadow-neutral-300/50 dark:shadow-emerald-900 cursor-pointer"
           aria-label="Toggle dark mode"
           @click="toggleDark()"
         >
@@ -188,7 +197,7 @@ const socialLinks = [
     >
       <div
         v-if="menuOpen"
-        class="md:hidden mt-1! bg-zinc-900/95 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-3"
+        class="md:hidden mt-2 w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl px-4 py-3 shadow-2xl"
       >
         <ul class="flex flex-col gap-1">
           <li v-for="link in navLinks" :key="link.label">
