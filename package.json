@@ -31,8 +31,10 @@
     "eslint-plugin-vue": "^10.9.0",
     "jsdom": "^29.0.2",
     "prettier": "3.8.3",
+    "tippy.js": "^6.3.7",
     "vite": "^8.0.8",
-    "vitest": "^4.1.4"
+    "vitest": "^4.1.4",
+    "vue3-calendar-heatmap": "^2.0.5"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

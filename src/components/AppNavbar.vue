@@ -43,16 +43,17 @@ const socialLinks = [
 <template>
   <nav ref="navRef" class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-4">
     <div
-      class="bg-zinc-900/90 backdrop-blur-md border border-white/10 rounded-3xl px-6 h-16 flex items-center justify-between"
+      class="bg-orange-900/20 backdrop-blur-[3px] border border-white/10 rounded-3xl px-6 h-16 flex items-center justify-between"
     >
       <!-- Left: Logo -->
       <RouterLink
         to="/"
         active-class=""
         exact-active-class=""
-        class="text-white text-xl font-medium font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
+        class="text-gray-800 dark:text-white text-xl font-medium font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
       >
-        TALHA<span class="text-gray-100">F</span><span class="text-red-500">.</span>
+        TALHA<span class="text-red-900 dark:text-gray-100">F</span
+        ><span class="text-red-500">.</span>
       </RouterLink>
 
       <!-- Center: Nav Links -->
@@ -100,7 +101,7 @@ const socialLinks = [
 
         <!-- Dark Mode Toggle — সব জায়গায় -->
         <button
-          class="cursor-pointer text-zinc-400 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/10"
+          class="cursor-pointer text-zinc-400 hover:text-white transition-colors p-2.5 rounded-full hover:bg-white/10"
           aria-label="Toggle dark mode"
           @click="toggleDark()"
         >
