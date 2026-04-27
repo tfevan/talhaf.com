@@ -1,3 +1,7 @@
+<script setup>
+import TechStackBackground from '@/components/TechStackBackground.vue'
+</script>
+
 <template>
   <section
     class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden"
@@ -21,14 +25,16 @@
 
         <!-- Heading -->
         <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white leading-tight"
+          class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white leading-tight text-outlined"
         >
           Hi, I'm Talha F.
           <span class="block text-purple-600 dark:text-purple-400">Full-stack Developer</span>
         </h1>
 
         <!-- Subtext -->
-        <p class="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-md leading-relaxed">
+        <p
+          class="text-outlined text-base sm:text-xl text-zinc-900 dark:text-zinc-400 leading-relaxed"
+        >
           Self-driven developer, passionate about building Laravel and Vue.js solutions, constantly
           pushing to grow in tech.
         </p>
@@ -46,7 +52,3 @@
     </TechStackBackground>
   </section>
 </template>
-
-<script setup>
-import TechStackBackground from '@/components/TechStackBackground.vue'
-</script>

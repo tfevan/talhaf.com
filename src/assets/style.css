@@ -1,3 +1,25 @@
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@utility text-outlined {
+  -webkit-text-stroke: 10px rgba(255, 255, 255, 0.3);
+  -moz-text-stroke: 10px rgba(255, 255, 255, 0.3);
+  paint-order: stroke fill;
+  text-shadow:
+    10px 10px 8px rgba(255, 255, 255, 0.2),
+    -10px -10px 8px rgba(255, 255, 255, 0.2),
+    10px -10px 8px rgba(255, 255, 255, 0.2),
+    -10px 10px 8px rgba(255, 255, 255, 0.2);
+}
+
+.dark .text-outlined,
+.dark.text-outlined {
+  -webkit-text-stroke: 10px #000000;
+  -moz-text-stroke: 10px #000000;
+  text-shadow:
+    10px 10px 8px rgba(50, 50, 50, 0.8),
+    -10px -10px 8px rgba(50, 50, 50, 0.8),
+    10px -10px 8px rgba(50, 50, 50, 0.8),
+    -10px 10px 8px rgba(50, 50, 50, 0.8);
+}
