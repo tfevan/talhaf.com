@@ -47,7 +47,7 @@ const socialLinks = [
 <template>
   <nav ref="navRef" class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-fit">
     <div
-      class="bg-white/10 dark:bg-amber-950/20 backdrop-blur-[1px] border border-amber-200/50 dark:border-amber-500/20 rounded-3xl px-6 h-16 flex items-center justify-between shadow-[0_-4px_24px_0_rgba(180,140,0,0.1),0_4px_24px_0_rgba(180,140,0,0.1)] w-full md:w-fit gap-4"
+      class="bg-white/75 dark:bg-amber-950/85 backdrop-blur-lg border border-amber-200/60 dark:border-amber-500/25 rounded-3xl px-6 h-16 flex items-center justify-between shadow-[0_8px_40px_-8px_rgb(180,140,0,0.35),0_-4px_20px_-5px_rgb(180,140,0,0.15),0_0_0_1px_rgb(180,140,0,0.08)] w-full md:w-fit gap-4"
     >
       <!-- Left: Logo -->
       <RouterLink
@@ -65,17 +65,34 @@ const socialLinks = [
         <li v-for="link in navLinks" :key="link.label">
           <RouterLink
             :to="link.to"
-            class="group relative text-base px-4 pt-2 pb-2.5 rounded-full transition-all duration-300 whitespace-nowrap"
+            class="group relative inline-flex flex-col items-center text-base px-4 pt-2 pb-2.5 transition-colors duration-300 whitespace-nowrap"
             :class="
               link.label === 'Contact'
-                ? 'text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium'
+                ? 'text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300'
                 : $route.path === link.to
-                  ? 'text-amber-900 dark:text-white bg-amber-100 dark:bg-amber-500/20 shadow-sm ring-1 ring-amber-200 dark:ring-amber-500/40'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:text-amber-900 dark:hover:text-amber-200 hover:bg-amber-50 dark:hover:bg-amber-500/10'
+                  ? 'text-amber-900 dark:text-amber-300'
+                  : 'text-amber-800 dark:text-amber-200/50 hover:text-amber-900 dark:hover:text-amber-200'
             "
             active-class=""
           >
-            {{ link.label }}
+            <span class="relative">
+              <!-- invisible bold clone to reserve space, prevents layout shift -->
+              <span class="invisible font-medium block h-0" aria-hidden="true">{{
+                link.label
+              }}</span>
+              <span class="font-medium" :class="$route.path === link.to ? '' : 'font-normal'">{{
+                link.label
+              }}</span>
+              <span
+                v-if="link.label !== 'Contact'"
+                class="absolute -bottom-1 left-0 h-px transition-all duration-300 bg-amber-500 dark:bg-amber-400"
+                :class="
+                  $route.path === link.to
+                    ? 'w-full opacity-100'
+                    : 'w-0 group-hover:w-full opacity-40'
+                "
+              />
+            </span>
           </RouterLink>
         </li>
       </ul>
@@ -196,17 +213,17 @@ const socialLinks = [
         v-if="menuOpen"
         class="md:hidden mt-2 w-full bg-white/90 dark:bg-amber-950/90 backdrop-blur-xl border border-amber-200/50 dark:border-amber-500/20 rounded-2xl px-4 py-3 shadow-2xl"
       >
-        <ul class="flex flex-col gap-1">
-          <li v-for="link in navLinks" :key="link.label">
+        <ul class="flex flex-col gap-1 py-0 my-0">
+          <li v-for="link in navLinks" :key="link.label" class="flex items-center justify-center">
             <RouterLink
               :to="link.to"
-              class="block text-base px-4 py-2 rounded-full transition-colors duration-200"
+              class="flex items-center justify-center w-full text-base px-4 h-11 rounded-full transition-all duration-300 leading-none"
               :class="
                 link.label === 'Resume' || link.label === 'Contact'
-                  ? 'text-amber-600 dark:text-amber-400 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:text-amber-900 dark:hover:text-amber-200'
+                  ? 'text-amber-600 dark:text-amber-400 font-semibold hover:bg-amber-100 dark:hover:bg-amber-500/10'
+                  : 'text-zinc-600 dark:text-zinc-400 hover:text-amber-900 dark:hover:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-500/10'
               "
-              active-class="!text-amber-900 dark:!text-white !bg-amber-100 dark:!bg-amber-500/20"
+              active-class="!text-amber-900 dark:!text-white !bg-amber-100 dark:!bg-amber-500/20 shadow-sm ring-1 ring-amber-200 dark:ring-amber-500/30"
               @click="menuOpen = false"
             >
               {{ link.label }}

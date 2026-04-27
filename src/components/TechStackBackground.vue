@@ -1,7 +1,6 @@
 <template>
   <div class="tech-bg-wrapper" :style="wrapperStyle">
     <div class="nebula" :style="nebulaStyle" aria-hidden="true" />
-    <canvas ref="starCanvas" class="starfield" aria-hidden="true" />
     <div class="logo-layer" aria-hidden="true">
       <div v-for="logo in logoItems" :key="logo.name" class="logo-item" :style="logo.style">
         <!-- eslint-disable-next-line vue/no-v-html -->
@@ -31,7 +30,7 @@ function syncDark() {
 }
 
 const wrapperStyle = computed(() => ({
-  background: isDark.value ? '#020818' : '#f1f5f9',
+  // background: isDark.value ? '#020818' : '#f1f5f9',
 }))
 
 const nebulaStyle = computed(() => {
@@ -156,9 +155,9 @@ const logoItems = ref([])
 
 function buildSlots(n) {
   const zones = [
-    { xMin: 3, xMax: 28, yMin: 3, yMax: 82, w: 3 },
-    { xMin: 72, xMax: 97, yMin: 3, yMax: 82, w: 3 },
-    { xMin: 28, xMax: 72, yMin: 3, yMax: 24, w: 2 },
+    { xMin: 3, xMax: 28, yMin: 10, yMax: 82, w: 3 },
+    { xMin: 72, xMax: 97, yMin: 10, yMax: 82, w: 3 },
+    { xMin: 28, xMax: 72, yMin: 10, yMax: 24, w: 2 },
     { xMin: 28, xMax: 72, yMin: 76, yMax: 82, w: 2 },
   ]
 
@@ -258,48 +257,6 @@ function buildLogoItems() {
   })
 }
 
-const starCanvas = ref(null)
-let rafId = null
-let stars = []
-
-function resizeCanvas() {
-  const c = starCanvas.value
-  if (!c) return
-  c.width = c.offsetWidth
-  c.height = c.offsetHeight
-  buildStars()
-}
-
-function buildStars() {
-  const c = starCanvas.value
-  if (!c) return
-  stars = Array.from({ length: props.starCount }, () => ({
-    x: Math.random() * c.width,
-    y: Math.random() * c.height,
-    r: rand(0.15, 1.45),
-    a: Math.random(),
-    spd: rand(0.004, 0.014),
-    dir: Math.random() > 0.5 ? 1 : -1,
-  }))
-}
-
-function drawStars() {
-  const c = starCanvas.value
-  if (!c) return
-  const ctx = c.getContext('2d')
-  ctx.clearRect(0, 0, c.width, c.height)
-  const rgb = isDark.value ? '210,225,255' : '30,41,59'
-  for (const s of stars) {
-    s.a += s.spd * s.dir
-    if (s.a >= 1 || s.a <= 0) s.dir *= -1
-    ctx.beginPath()
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
-    ctx.fillStyle = `rgba(${rgb},${s.a})`
-    ctx.fill()
-  }
-  rafId = globalThis.requestAnimationFrame(drawStars)
-}
-
 let ro = null
 let observer = null
 
@@ -313,18 +270,9 @@ onMounted(() => {
     attributes: true,
     attributeFilter: ['class'],
   })
-
-  resizeCanvas()
-  drawStars()
-
-  if (globalThis.ResizeObserver && starCanvas.value) {
-    ro = new globalThis.ResizeObserver(resizeCanvas)
-    ro.observe(starCanvas.value)
-  }
 })
 
 onUnmounted(() => {
-  globalThis.cancelAnimationFrame(rafId)
   ro?.disconnect()
   observer?.disconnect()
 })
@@ -344,16 +292,6 @@ onUnmounted(() => {
   pointer-events: none;
   z-index: 0;
   transition: background 0.4s ease;
-}
-
-.starfield {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .logo-layer {

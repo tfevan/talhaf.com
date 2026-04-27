@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative min-h-screen flex items-center justify-center bg-[#f1f5f9] dark:bg-[#020818] transition-colors duration-300 pt-8 overflow-hidden"
+    class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden"
   >
     <!-- Tech Logo Background -->
     <TechStackBackground :star-count="400" :logo-scale="1">
