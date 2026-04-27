@@ -45,22 +45,19 @@ const socialLinks = [
 </script>
 
 <template>
-  <nav
-    ref="navRef"
-    class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] md:w-fit px-4"
-  >
+  <nav ref="navRef" class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-fit">
     <div
-      class="bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-3xl px-6 h-16 flex items-center justify-between shadow-[0_-4px_24px_0_rgba(0,0,0,0.08),0_4px_24px_0_rgba(0,0,0,0.08)] w-full md:w-fit gap-4"
+      class="bg-white/10 dark:bg-amber-950/20 backdrop-blur-[1px] border border-amber-200/50 dark:border-amber-500/20 rounded-3xl px-6 h-16 flex items-center justify-between shadow-[0_-4px_24px_0_rgba(180,140,0,0.1),0_4px_24px_0_rgba(180,140,0,0.1)] w-full md:w-fit gap-4"
     >
       <!-- Left: Logo -->
       <RouterLink
         to="/"
         active-class=""
         exact-active-class=""
-        class="text-zinc-900 dark:text-white text-xl font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
+        class="text-amber-900 dark:text-amber-400 text-xl font-bold tracking-tight shrink-0 w-fit !bg-transparent hover:!bg-transparent"
       >
-        TALHA<span class="text-red-600 dark:text-red-500">F</span
-        ><span class="text-red-500">.</span>
+        TALHA<span class="text-amber-600 dark:text-amber-500">F</span
+        ><span class="text-amber-500">.</span>
       </RouterLink>
 
       <!-- Center: Nav Links -->
@@ -71,10 +68,10 @@ const socialLinks = [
             class="group relative text-base px-4 pt-2 pb-2.5 rounded-full transition-all duration-300 whitespace-nowrap"
             :class="
               link.label === 'Contact'
-                ? 'text-red-500 hover:text-red-400'
+                ? 'text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium'
                 : $route.path === link.to
-                  ? 'text-zinc-900 dark:text-white bg-white/60 dark:bg-white/10 shadow-sm ring-1 ring-zinc-200 dark:ring-white/20'
-                  : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5'
+                  ? 'text-amber-900 dark:text-white bg-amber-100 dark:bg-amber-500/20 shadow-sm ring-1 ring-amber-200 dark:ring-amber-500/40'
+                  : 'text-zinc-600 dark:text-zinc-400 hover:text-amber-900 dark:hover:text-amber-200 hover:bg-amber-50 dark:hover:bg-amber-500/10'
             "
             active-class=""
           >
@@ -93,7 +90,7 @@ const socialLinks = [
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="s.label"
-          class="hidden md:block text-zinc-600 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-gray-100 transition-colors p-2.5 rounded-full hover:bg-gray-200/70 dark:hover:bg-gray-900 shadow-inner shadow-neutral-300/50 dark:shadow-emerald-900 cursor-pointer"
+          class="hidden md:block text-amber-800 dark:text-amber-500/80 hover:text-amber-600 dark:hover:text-amber-300 transition-colors p-2.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/50 shadow-inner shadow-amber-200/50 dark:shadow-amber-900/30 cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +103,11 @@ const socialLinks = [
         </a>
 
         <!-- Divider — শুধু desktop এ -->
-        <span class="hidden md:block w-px h-4 bg-gray-900/20 dark:bg-white/20"></span>
+        <span class="hidden md:block w-px h-4 bg-amber-900/20 dark:bg-amber-500/20"></span>
 
         <!-- Dark Mode Toggle — সব জায়গায় -->
         <button
-          class="text-zinc-600 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-gray-100 transition-colors p-2.5 rounded-full hover:bg-gray-200/70 dark:hover:bg-gray-900 shadow-inner shadow-neutral-300/50 dark:shadow-emerald-900 cursor-pointer"
+          class="text-amber-800 dark:text-amber-500/80 hover:text-amber-600 dark:hover:text-amber-300 transition-colors p-2.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/50 shadow-inner shadow-amber-200/50 dark:shadow-amber-900/30 cursor-pointer"
           aria-label="Toggle dark mode"
           @click="toggleDark()"
         >
@@ -148,7 +145,7 @@ const socialLinks = [
 
         <!-- Mobile Hamburger -->
         <button
-          class="cursor-pointer md:hidden text-zinc-400 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/10"
+          class="cursor-pointer md:hidden text-amber-700 dark:text-amber-500 hover:text-amber-900 dark:hover:text-amber-300 transition-colors p-1.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-500/10"
           aria-label="Toggle menu"
           @click="toggleMenu"
         >
@@ -197,7 +194,7 @@ const socialLinks = [
     >
       <div
         v-if="menuOpen"
-        class="md:hidden mt-2 w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-2xl px-4 py-3 shadow-2xl"
+        class="md:hidden mt-2 w-full bg-white/90 dark:bg-amber-950/90 backdrop-blur-xl border border-amber-200/50 dark:border-amber-500/20 rounded-2xl px-4 py-3 shadow-2xl"
       >
         <ul class="flex flex-col gap-1">
           <li v-for="link in navLinks" :key="link.label">
@@ -205,11 +202,11 @@ const socialLinks = [
               :to="link.to"
               class="block text-base px-4 py-2 rounded-full transition-colors duration-200"
               :class="
-                link.label === 'Resume'
-                  ? 'text-red-500 hover:text-red-400'
-                  : 'text-zinc-400 hover:text-white'
+                link.label === 'Resume' || link.label === 'Contact'
+                  ? 'text-amber-600 dark:text-amber-400 font-semibold'
+                  : 'text-zinc-600 dark:text-zinc-400 hover:text-amber-900 dark:hover:text-amber-200'
               "
-              active-class="!text-white !bg-white/10"
+              active-class="!text-amber-900 dark:!text-white !bg-amber-100 dark:!bg-amber-500/20"
               @click="menuOpen = false"
             >
               {{ link.label }}
@@ -218,15 +215,16 @@ const socialLinks = [
         </ul>
 
         <!-- Social Icons — mobile -->
-        <div class="flex items-center justify-center gap-2 px-4 pt-3 mt-2 border-t border-white/10">
+        <div
+          class="flex items-center justify-center gap-2 px-4 pt-3 mt-2 border-t border-amber-200/30 dark:border-amber-500/20"
+        >
           <a
             v-for="s in socialLinks"
             :key="s.label"
             :href="s.href"
             target="_blank"
             rel="noopener noreferrer"
-            :aria-label="s.label"
-            class="text-zinc-400 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/10 cursor-pointer"
+            class="text-amber-700 dark:text-amber-500/80 hover:text-amber-500 transition-colors p-2.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-500/10"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
