@@ -1,15 +1,19 @@
 <script setup>
+import { useDark } from '@vueuse/core'
 import AppNavbar from '@/components/AppNavbar.vue'
 import HeroSection from '@/components/HeroSection.vue'
-import TechStackBackground from '@/components/TechStackBackground.vue'
+import StarfieldBackground from '@/components/StarfieldBackground.vue'
+import SkillsExpertise from '@/components/SkillsExpertise.vue'
+
+const isDark = useDark()
 </script>
 
 <template>
-  <!-- <TechStackBackground :star-count="400" :logo-scale="1"> -->
-  <AppNavbar />
-  <HeroSection />
-  <!-- </TechStackBackground> -->
-  <!-- <router-view /> -->
+  <StarfieldBackground :star-count="220" :is-dark="isDark">
+    <AppNavbar />
+    <HeroSection />
+    <SkillsExpertise />
+  </StarfieldBackground>
 </template>
 
 <style>
