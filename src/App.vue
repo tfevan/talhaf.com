@@ -5,16 +5,18 @@ import HeroSection from '@/components/HeroSection.vue'
 import StarfieldBackground from '@/components/StarfieldBackground.vue'
 import GitHubHeatmap from '@/components/GitHubHeatmap.vue'
 import SkillsExpertise from '@/components/SkillsExpertise.vue'
+import ContactForm from '@/components/ContactForm.vue'
 
 const isDark = useDark()
 </script>
 
 <template>
-  <StarfieldBackground :star-count="80" :is-dark="isDark">
+  <StarfieldBackground :star-count="15" :is-dark="isDark">
     <AppNavbar />
     <HeroSection />
     <GitHubHeatmap username="tfevan" />
     <SkillsExpertise />
+    <ContactForm />
   </StarfieldBackground>
 </template>
 

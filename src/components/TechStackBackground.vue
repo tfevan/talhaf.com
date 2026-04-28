@@ -1,7 +1,7 @@
 <template>
-  <div class="tech-bg-wrapper" :style="wrapperStyle">
+  <div class="tech-bg-wrapper">
     <div class="nebula" :style="nebulaStyle" aria-hidden="true" />
-    <div class="logo-layer" aria-hidden="true">
+    <div class="logo-layer hidden sm:block" aria-hidden="true">
       <div v-for="logo in logoItems" :key="logo.name" class="logo-item" :style="logo.style">
         <!-- eslint-disable-next-line vue/no-v-html -->
         <span class="logo-icon" v-html="logo.svg" />
@@ -27,10 +27,6 @@ function syncDark() {
   // eslint-disable-next-line no-undef
   isDark.value = document.documentElement.classList.contains('dark')
 }
-
-const wrapperStyle = computed(() => ({
-  // background: isDark.value ? '#020818' : '#f1f5f9',
-}))
 
 const nebulaStyle = computed(() => {
   const a = isDark.value ? ['0.08', '0.06', '0.05'] : ['0.14', '0.11', '0.09']
