@@ -74,11 +74,14 @@ const handleNavClick = (e, href) => {
           'relative flex items-center gap-0 rounded-2xl px-5 transition-all duration-500',
           scrolled
             ? isDark
-              ? 'bg-zinc-900/90 shadow-2xl shadow-black/40 backdrop-blur-xl border border-white/8'
-              : 'bg-white/85 shadow-2xl shadow-black/12 backdrop-blur-xl border border-black/8'
+              ? 'bg-zinc-900/90 shadow-2xl shadow-black/40 backdrop-blur-xl'
+              : 'bg-white/85 shadow-2xl shadow-black/12 backdrop-blur-xl'
             : isDark
-              ? 'bg-zinc-900/70 shadow-xl shadow-black/30 backdrop-blur-md border border-white/6'
-              : 'bg-white/70 shadow-xl shadow-black/8 backdrop-blur-md border border-black/6',
+              ? 'bg-zinc-900/70 shadow-xl shadow-black/30 backdrop-blur-md'
+              : 'bg-white/70 shadow-xl shadow-black/8 backdrop-blur-md',
+          isDark
+            ? 'border border-transparent [background-clip:padding-box] ring-1 ring-amber-400/30'
+            : 'border border-transparent [background-clip:padding-box] ring-1 ring-purple-400/30',
         ]"
         style="height: 56px"
       >
@@ -107,7 +110,7 @@ const handleNavClick = (e, href) => {
             <a
               :href="item.href"
               :class="[
-                'relative px-3.5 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 group',
+                'relative px-3.5 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 group font-medium!',
                 activeSection === item.href.slice(1)
                   ? 'bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent'
                   : isDark

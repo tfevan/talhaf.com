@@ -5,7 +5,7 @@ import TechStackBackground from '@/components/TechStackBackground.vue'
 <template>
   <section
     id="home"
-    class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden"
+    class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden mt-8"
   >
     <!-- Tech Logo Background -->
     <TechStackBackground :logo-scale="1">
@@ -34,14 +34,20 @@ import TechStackBackground from '@/components/TechStackBackground.vue'
 
         <!-- Subtext -->
         <p
-          class="text-outlined text-base sm:text-xl text-zinc-900 dark:text-zinc-400 leading-relaxed"
+          class="text-outlined text-xl sm:text-2xl lg:text-3xl text-black dark:text-zinc-300 font-light"
         >
-          Self-driven developer, passionate about building Laravel and Vue.js solutions, constantly
-          pushing to grow in tech.
+          Self-driven developer, passionate about building
+          <span class="font-semibold text-zinc-900 dark:text-white">Laravel</span>
+          and
+          <span class="font-semibold text-zinc-900 dark:text-white">Vue.js</span>
+          solutions,
+          <span class="italic text-zinc-600 dark:text-zinc-400">
+            constantly pushing to grow in tech.
+          </span>
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-wrap items-center justify-center gap-4 mt-2">
+        <div class="flex flex-wrap items-center justify-center gap-4 1">
           <a
             href="#contact"
             class="px-6 py-3 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold text-sm hover:opacity-80 transition-opacity duration-200"
