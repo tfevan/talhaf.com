@@ -18,7 +18,6 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
-  starCount: { type: Number, default: 200 },
   logoScale: { type: Number, default: 1 },
 })
 

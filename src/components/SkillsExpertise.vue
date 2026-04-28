@@ -186,68 +186,70 @@ const apis = [
 </script>
 
 <template>
-  <section class="skills-section px-5 py-12 md:px-10 md:py-16 lg:px-32 xl:px-48">
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h2
-        class="text-outlined text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight"
-      >
-        Skills &amp; Expertise
-      </h2>
-      <p
-        class="text-outlined text-gray-500 dark:text-gray-400 text-base md:text-lg leading-relaxed mx-auto"
-      >
-        Technologies I use across languages, frameworks, tools, and databases.
-      </p>
-    </div>
-
-    <!-- Languages -->
-    <div class="mb-10">
-      <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
-        Languages
-      </h3>
-      <div class="flex flex-wrap gap-3">
-        <SkillBadge v-for="(item, i) in languages" :key="i" :skill="item" />
+  <section id="skills" class="px-5 py-12 md:px-10 md:py-16 lg:px-32 xl:px-48">
+    <div class="mt-8 skills-section">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h2
+          class="text-outlined text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight"
+        >
+          Skills &amp; Expertise
+        </h2>
+        <p
+          class="text-outlined text-gray-500 dark:text-gray-400 text-base md:text-lg leading-relaxed mx-auto"
+        >
+          Technologies I use across languages, frameworks, tools, and databases.
+        </p>
       </div>
-    </div>
 
-    <!-- Frameworks & Libraries -->
-    <div class="mb-10">
-      <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
-        Frameworks &amp; Libraries
-      </h3>
-      <div class="flex flex-wrap gap-3">
-        <SkillBadge v-for="(item, i) in frameworks" :key="i" :skill="item" />
+      <!-- Languages -->
+      <div class="mb-10">
+        <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
+          Languages
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <SkillBadge v-for="(item, i) in languages" :key="i" :skill="item" />
+        </div>
       </div>
-    </div>
 
-    <!-- Tools & Platforms -->
-    <div class="mb-10">
-      <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
-        Tools &amp; Platforms
-      </h3>
-      <div class="flex flex-wrap gap-3">
-        <SkillBadge v-for="(item, i) in tools" :key="i" :skill="item" />
+      <!-- Frameworks & Libraries -->
+      <div class="mb-10">
+        <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
+          Frameworks &amp; Libraries
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <SkillBadge v-for="(item, i) in frameworks" :key="i" :skill="item" />
+        </div>
       </div>
-    </div>
 
-    <!-- Databases -->
-    <div class="mb-10">
-      <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
-        Databases
-      </h3>
-      <div class="flex flex-wrap gap-3">
-        <SkillBadge v-for="(item, i) in databases" :key="i" :skill="item" />
+      <!-- Tools & Platforms -->
+      <div class="mb-10">
+        <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
+          Tools &amp; Platforms
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <SkillBadge v-for="(item, i) in tools" :key="i" :skill="item" />
+        </div>
       </div>
-    </div>
 
-    <!-- APIs -->
-    <div class="mb-10">
-      <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
-        API
-      </h3>
-      <div class="flex flex-wrap gap-3">
-        <SkillBadge v-for="(item, i) in apis" :key="i" :skill="item" />
+      <!-- Databases -->
+      <div class="mb-10">
+        <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
+          Databases
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <SkillBadge v-for="(item, i) in databases" :key="i" :skill="item" />
+        </div>
+      </div>
+
+      <!-- APIs -->
+      <div class="mb-10">
+        <h3 class="text-outlined text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-5">
+          API
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          <SkillBadge v-for="(item, i) in apis" :key="i" :skill="item" />
+        </div>
       </div>
     </div>
   </section>
