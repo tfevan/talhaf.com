@@ -3,6 +3,7 @@ import { useDark } from '@vueuse/core'
 import AppNavbar from '@/components/AppNavbar.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import StarfieldBackground from '@/components/StarfieldBackground.vue'
+import GitHubHeatmap from '@/components/GitHubHeatmap.vue'
 import SkillsExpertise from '@/components/SkillsExpertise.vue'
 
 const isDark = useDark()
@@ -12,6 +13,7 @@ const isDark = useDark()
   <StarfieldBackground :star-count="80" :is-dark="isDark">
     <AppNavbar />
     <HeroSection />
+    <GitHubHeatmap username="tfevan" />
     <SkillsExpertise />
   </StarfieldBackground>
 </template>
