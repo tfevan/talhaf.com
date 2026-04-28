@@ -9,7 +9,7 @@ const isDark = useDark()
 </script>
 
 <template>
-  <StarfieldBackground :star-count="220" :is-dark="isDark">
+  <StarfieldBackground :star-count="80" :is-dark="isDark">
     <AppNavbar />
     <HeroSection />
     <SkillsExpertise />
