@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n,t as r}from"./index-3vIsCQ6R.js";var i={__name:`HomeView`,setup(i){return t(`Talha F. - Full-stack Developer`),(t,i)=>(e(),n(r))}};export{i as default};
