@@ -11,7 +11,7 @@ import TechStackBackground from '@/components/TechStackBackground.vue'
     <TechStackBackground :logo-scale="1">
       <!-- Main Content -->
       <div
-        class="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto gap-6"
+        class="mt-8 relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto gap-6"
       >
         <!-- Avatar -->
         <div

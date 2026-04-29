@@ -32,7 +32,16 @@ async function sendMessage() {
 
     const res = await fetch('https://api.w3forms.com/submit', {
       method: 'POST',
-      body: payload,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
     })
 
     const data = await res.json()

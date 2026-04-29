@@ -68,7 +68,9 @@ const endDate = computed(() => new Date().toISOString().split('T')[0])
     <p class="contrib-title">
       <template v-if="loading">Loading contributions…</template>
       <template v-else-if="error">Contribution graph</template>
-      <template v-else>{{ totalCommits.toLocaleString() }} contributions in the last year</template>
+      <template v-else
+        >{{ totalCommits.toLocaleString() }} contributions in the past 365 days.</template
+      >
     </p>
 
     <div v-if="loading" class="state-wrap">
