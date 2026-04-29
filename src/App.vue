@@ -6,18 +6,21 @@ import StarfieldBackground from '@/components/StarfieldBackground.vue'
 import GitHubHeatmap from '@/components/GitHubHeatmap.vue'
 import SkillsExpertise from '@/components/SkillsExpertise.vue'
 import ContactForm from '@/components/ContactForm.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 const isDark = useDark()
 </script>
 
 <template>
-  <StarfieldBackground :star-count="15" :is-dark="isDark">
-    <AppNavbar />
-    <HeroSection />
-    <GitHubHeatmap username="tfevan" />
-    <SkillsExpertise />
-    <ContactForm />
-  </StarfieldBackground>
+  <!-- <StarfieldBackground :star-count="15" :is-dark="isDark"> -->
+  <AppNavbar />
+  <HeroSection />
+  <GitHubHeatmap username="tfevan" />
+  <SkillsExpertise />
+  <ContactForm />
+  <FooterComponent />
+
+  <!-- </StarfieldBackground> -->
 </template>
 
 <style>
@@ -26,5 +29,9 @@ body,
 #app {
   height: 100%;
   min-height: 100vh;
+}
+
+body {
+  margin: 0;
 }
 </style>

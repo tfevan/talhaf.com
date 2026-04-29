@@ -189,7 +189,7 @@ const apis = [
 </script>
 
 <template>
-  <section id="skills" class="px-5 py-12 md:px-10 md:py-16 lg:px-32 xl:px-48">
+  <section id="skills" class="px-5 pt-12 md:px-10 md:pt-16 lg:px-32 xl:px-48">
     <div class="mt-8 skills-section">
       <!-- Header -->
       <div class="text-center mb-12">
