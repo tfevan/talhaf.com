@@ -20,7 +20,7 @@ const currentYear = ref(new Date().getFullYear())
         </div>
 
         <!-- Social Links -->
-        <div class="flex items-center gap-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+        <div class="flex items-center gap-3 text-xs font-medium text-zinc-600 dark:text-zinc-400">
           <a
             href="https://portfolio.talhaf.com/"
             target="_blank"
