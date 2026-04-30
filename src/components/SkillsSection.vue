@@ -90,11 +90,15 @@ const filteredSkills = computed(() =>
 </script>
 
 <template>
-  <section id="skills" class="py-16 px-4 font-sans">
+  <section id="skills" class="pt-16 px-4 font-sans">
     <!-- Header -->
     <div class="text-center mt-8 mb-10">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">Skills</h2>
       <div class="w-10 h-0.5 bg-gray-400 mx-auto rounded-full" />
+
+      <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+        Technologies and tools I work with
+      </p>
     </div>
 
     <!-- Filter Tabs -->
