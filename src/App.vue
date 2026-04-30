@@ -9,7 +9,7 @@ import ContactSection from '@/components/ContactSection.vue'
 
 <template>
   <AppNavbar />
-  <HeroSection />
+  <HeroSection id="home" />
   <SkillsSection />
   <GitHubHeatmap username="tfevan" />
 

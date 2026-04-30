@@ -4,14 +4,13 @@ import TechStackBackground from '@/components/TechStackBackground.vue'
 
 <template>
   <section
-    id="home"
     class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden mt-8"
   >
     <!-- Tech Logo Background -->
     <TechStackBackground :logo-scale="1">
       <!-- Main Content -->
       <div
-        class="mt-8 relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto gap-6"
+        class="mt-6 relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto gap-6"
       >
         <!-- Avatar -->
         <div
