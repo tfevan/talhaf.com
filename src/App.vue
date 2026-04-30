@@ -2,9 +2,9 @@
 import AppNavbar from '@/components/AppNavbar.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import GitHubHeatmap from '@/components/GitHubHeatmap.vue'
-import ContactForm from '@/components/ContactForm.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
+import ContactSection from '@/components/ContactSection.vue'
 </script>
 
 <template>
@@ -13,6 +13,6 @@ import SkillsSection from '@/components/SkillsSection.vue'
   <SkillsSection />
   <GitHubHeatmap username="tfevan" />
 
-  <ContactForm />
+  <ContactSection />
   <FooterComponent />
 </template>

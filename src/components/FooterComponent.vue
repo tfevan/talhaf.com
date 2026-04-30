@@ -38,7 +38,7 @@ const hoveredIndex = ref(null)
 
     <!-- Background layer -->
     <div class="bg-white/80 dark:bg-slate-900/95 backdrop-blur-sm relative">
-      <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-6 sm:py-7">
+      <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-6 sm:py-4">
         <div
           class="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:justify-between"
         >
