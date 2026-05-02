@@ -1,9 +1,8 @@
 <script setup>
+/* global document, MutationObserver, fetch */
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { CalendarHeatmap } from 'vue3-calendar-heatmap'
 import 'vue3-calendar-heatmap/dist/style.css'
-
-/* global document, MutationObserver, fetch */
 
 const props = defineProps({
   username: { type: String, default: 'tfevan' },
@@ -63,7 +62,7 @@ const endDate = computed(() => new Date().toISOString().split('T')[0])
 
 <template>
   <section class="gh-card">
-    <h3 class="section-title">My GitHub Stats</h3>
+    <h2 class="section-title">Github Heatmap</h2>
 
     <p class="contrib-title">
       <template v-if="loading">Loading contributions…</template>
@@ -99,8 +98,9 @@ const endDate = computed(() => new Date().toISOString().split('T')[0])
   </section>
 </template>
 
-<style scoped>
+<style>
 @reference 'tailwindcss';
+
 .gh-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.42) 100%);
   backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
@@ -158,8 +158,8 @@ const endDate = computed(() => new Date().toISOString().split('T')[0])
 
 .section-title {
   margin: 0 0 0.15rem;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 500;
   letter-spacing: -0.3px;
   color: #1f2328;
 }

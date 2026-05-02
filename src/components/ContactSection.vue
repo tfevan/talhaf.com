@@ -25,7 +25,6 @@ function validate() {
     errors.email = ''
   }
 
-  // hCaptcha validation
   const response = hcaptcha?.getResponse(captchaWidgetId)
   errors.captcha = response ? '' : 'Please complete the captcha verification.'
 
@@ -82,7 +81,6 @@ function resetForm() {
   }
 }
 
-// Initialize hCaptcha properly
 onMounted(async () => {
   await nextTick()
 
@@ -92,7 +90,6 @@ onMounted(async () => {
   script.defer = true
   document.head.appendChild(script)
 
-  // Initial render
   setTimeout(() => {
     const captchaContainer = document.querySelector('.h-captcha')
     if (captchaContainer && typeof hcaptcha !== 'undefined') {
@@ -105,17 +102,14 @@ onMounted(async () => {
   }, 800)
 })
 
-// Re-render captcha when dark mode toggles
 watch(isDark, () => {
   if (typeof hcaptcha === 'undefined' || captchaWidgetId === null) return
 
   const container = document.querySelector('.h-captcha')
   if (!container) return
 
-  // Clear previous captcha
   container.innerHTML = ''
 
-  // Re-render with updated theme
   nextTick(() => {
     captchaWidgetId = hcaptcha.render(container, {
       sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
@@ -138,7 +132,7 @@ watch(isDark, () => {
     </div>
 
     <!-- Contact Form -->
-    <div class="max-w-2xl mx-auto mb-16">
+    <div class="max-w-2xl mx-auto mb-12">
       <Transition
         enter-active-class="transition-all duration-500"
         enter-from-class="opacity-0"
@@ -152,7 +146,7 @@ watch(isDark, () => {
         <div
           v-if="state === 'success'"
           key="success"
-          class="flex flex-col items-center justify-center gap-4 py-16 text-center"
+          class="flex flex-col items-center justify-center gap-4 text-center"
         >
           <div
             class="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/40"
@@ -173,11 +167,10 @@ watch(isDark, () => {
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Message sent!</h3>
           <p class="text-sm text-gray-500 dark:text-gray-400">
-            Thanks for reaching out — I'll get back to you as soon as possible.
+            Thanks for reaching out, I'll get back to you as soon as possible.
           </p>
         </div>
 
-        <!--f form -->
         <div v-else key="form">
           <!-- Honeypot (W3Forms spam protection) -->
           <input
@@ -191,7 +184,6 @@ watch(isDark, () => {
 
           <!-- Name + Email row -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <!-- Name -->
             <div>
               <div class="relative">
                 <label
@@ -215,7 +207,6 @@ watch(isDark, () => {
               <p v-if="errors.name" class="mt-1 ml-1 text-xs text-red-500">{{ errors.name }}</p>
             </div>
 
-            <!-- Email -->
             <div>
               <div class="relative">
                 <label

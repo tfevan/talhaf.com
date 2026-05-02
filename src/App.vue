@@ -6,6 +6,16 @@ import GitHubHeatmap from '@/components/GitHubHeatmap.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
+import ProjectsSection from '@/components/ProjectsSection.vue'
+import { useDark } from '@vueuse/core'
+
+useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light',
+  initialValue: 'dark',
+})
 </script>
 
 <template>
@@ -14,7 +24,7 @@ import ContactSection from '@/components/ContactSection.vue'
   <AboutSection />
   <SkillsSection />
   <GitHubHeatmap username="tfevan" />
-
+  <ProjectsSection />
   <ContactSection />
   <FooterComponent />
 </template>
