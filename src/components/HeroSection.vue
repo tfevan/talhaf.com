@@ -4,7 +4,8 @@ import TechStackBackground from '@/components/TechStackBackground.vue'
 
 <template>
   <section
-    class="relative min-h-screen flex items-center justify-center transition-colors duration-300 pt-8 overflow-hidden mt-8"
+    id="home"
+    class="relative flex items-center justify-center transition-colors duration-300 pt-8 pb-0 mb-0 overflow-hidden mt-8 scroll-mt-24"
   >
     <!-- Tech Logo Background -->
     <TechStackBackground :logo-scale="1">

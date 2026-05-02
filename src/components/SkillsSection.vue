@@ -56,7 +56,6 @@ const skills = [
   { name: 'CSS3', icon: CssIcon, category: 'code' },
   { name: 'Bootstrap', icon: BootstrapIcon, category: 'code' },
   { name: 'TailwindCSS', icon: TailwindCssIcon, category: 'code' },
-
   // database
   { name: 'MariaDB', icon: MariaDbIcon, category: 'database' },
   { name: 'MySQL', icon: MySqlIcon, category: 'database' },
@@ -64,14 +63,12 @@ const skills = [
   { name: 'Redis', icon: RedisIcon, category: 'database' },
   { name: 'Memcached', icon: MemcachedIcon, category: 'database' },
   { name: 'MongoDB', icon: MongoDbIcon, category: 'database' },
-
   // API
   { name: 'REST API', icon: RestIcon, category: 'api' },
   { name: 'GraphQL', icon: GraphQlIcon, category: 'api' },
   { name: 'OpenAPI', icon: OpenApiIcon, category: 'api' },
   { name: 'Swagger', icon: SwaggerIcon, category: 'api' },
   { name: 'Postman', icon: PostmanIcon, category: 'api' },
-
   // Tools
   { name: 'Git', icon: GitIcon, category: 'tools' },
   { name: 'VS Code', icon: VsCodeIcon, category: 'tools' },
@@ -95,7 +92,6 @@ const filteredSkills = computed(() =>
     <div class="text-center mt-8 mb-10">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">Skills</h2>
       <div class="w-10 h-0.5 bg-gray-400 mx-auto rounded-full" />
-
       <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
         Technologies and tools I work with
       </p>
