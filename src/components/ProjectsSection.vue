@@ -211,14 +211,14 @@ const projects = [
     <Transition name="fade">
       <div
         v-if="selectedProject"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm cursor-pointer"
         @click.self="closeModal"
       >
         <!-- Modal Box -->
         <Transition name="slide-up">
           <div
             v-if="selectedProject"
-            class="relative bg-white dark:bg-slate-900 rounded shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            class="relative bg-white dark:bg-slate-900 rounded shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto cursor-auto [-webkit-overflow-scrolling:touch]"
           >
             <!-- Modal Image -->
             <div class="relative w-full overflow-hidden shrink-0">
@@ -232,7 +232,8 @@ const projects = [
 
               <!-- Close Button -->
               <button
-                class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors duration-200 cursor-pointer"
+                class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors duration-200 cursor-pointer"
+                type="button"
                 @click="closeModal"
               >
                 <svg
@@ -362,7 +363,7 @@ const projects = [
   </section>
 </template>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s ease;

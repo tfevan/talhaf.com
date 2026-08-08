@@ -98,7 +98,7 @@ const endDate = computed(() => new Date().toISOString().split('T')[0])
   </section>
 </template>
 
-<style>
+<style scoped>
 @reference 'tailwindcss';
 
 .gh-card {
