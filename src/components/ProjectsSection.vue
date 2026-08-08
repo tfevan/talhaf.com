@@ -363,7 +363,7 @@ const projects = [
   </section>
 </template>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s ease;

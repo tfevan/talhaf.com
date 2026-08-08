@@ -142,7 +142,7 @@ const filteredSkills = computed(() =>
   </section>
 </template>
 
-<style>
+<style scoped>
 .skill-list-enter-active {
   transition: all 0.25s ease;
 }
