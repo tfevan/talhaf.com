@@ -24,7 +24,7 @@ const projects = [
       'Firely is a branded URL shortener built with Vue.js and Laravel. It supports deep links, WhatsApp links with custom messages, and advanced targeting by location, device, and platform, along with pixel tracking. As a SaaS platform, it includes automated billing and a REST API with OpenAPI Specification support.',
     image: Firely,
     tags: [
-      'Laravel 12',
+      'Laravel 13',
       'Vue.js 3',
       'ViteJS',
       'TailwindCSS 4',
@@ -34,7 +34,7 @@ const projects = [
       'Automotion',
       'OpenAPI',
     ],
-    status: 'In Progress',
+    status: 'Live',
     liveUrl: null,
     modal: {
       description:
@@ -74,7 +74,7 @@ const projects = [
     description:
       'Pi Analytics is a self-hosted PHP/MySQL web analytics tool that tracks website traffic using cookies and provides detailed visitor reports, including search engines, keywords, language, and popular pages. After a quick 5-minute setup, you receive a JavaScript tracking tag to install on your websites.',
     image: piAnalytics,
-    tags: ['Laravel 12', 'Bootstrap', 'Multi Tenant', 'Multi Domain', 'SaaS'],
+    tags: ['Laravel 13', 'Bootstrap', 'Multi Tenant', 'Multi Domain', 'SaaS'],
     status: 'Live',
     liveUrl: 'https://www.codester.com/items/44209/pi-analytics-track-your-site-visitor',
   },
@@ -83,7 +83,7 @@ const projects = [
     description:
       'Microly is a URL management platform that lets you shorten links, target audiences by location, device, or platform, and track detailed analytics for each link. It also supports integration with services like Bitly, Rebrandly, TinyURL, Cuttly, BL.INK, and T2M, allowing you to manage everything directly from the Microly dashboard.',
     image: Microly,
-    tags: ['Laravel 12', 'Bootstrap', 'Multi Tenant', 'Multi Domain', 'SaaS'],
+    tags: ['Laravel 13', 'Bootstrap', 'Multi Tenant', 'Multi Domain', 'SaaS'],
     status: 'Live',
     liveUrl: 'https://www.codester.com/items/41712/microly-multi-tenant-url-shortener-saas',
   },
